@@ -7,6 +7,7 @@ import examples from "./views/examples";
 import UsersSettings from "@/views/settings/users";
 import CompaniesSettings from "@/views/settings/companies";
 import BrowseList from "@/views/browse/";
+import Testb from "@/views/testb/";
 
 Vue.use(Router);
 
@@ -89,6 +90,14 @@ const router = new Router({
             path: "/browse",
             name: "browse",
             component: BrowseList,
+            meta: {
+                requiresAuth: false
+            }
+        },
+        {
+            path: "/testb",
+            name: "testb",
+            component: Testb,
             meta: {
                 requiresAuth: false
             }

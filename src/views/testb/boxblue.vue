@@ -27,3 +27,18 @@
         </div>
     </div>
 </template>
+
+<style lang="scss" scoped>
+    button{
+        color:red;
+        & :hover{
+            color:aqua;
+        }
+        background: blueviolet;
+        & :hover{
+            background: red;
+        }
+        font-size: 2em;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+</style>
