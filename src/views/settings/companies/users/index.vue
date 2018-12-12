@@ -2,7 +2,11 @@
     <div class="row">
         <div class="col">
             <transition name="fade" mode="out-in">
-                <component :is="currentComponent" :users="users" @usersCRUD="usersCRUD" @usersList="usersList"></component>
+                <component 
+                    :is="currentComponent" 
+                    :users="users" 
+                    @usersCRUD="usersCRUD" 
+                    @usersList="usersList"/>
             </transition>
         </div>
     </div>

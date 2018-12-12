@@ -1,75 +1,75 @@
 <template>
-<div>
-    <h5 class="form-title">{{ title }}</h5>
-    <div class="row user-general-information">
-        <div class="col-12 m-b-20">
-            <div class="row">
-                <div class="col-6 col-md">
-                    <div class="form-group form-group-default required">
-                        <label>First name</label>
-                        <input
-                            v-model="userData.firstname"
-                            class="form-control"
-                            type="text"
-                            name="firstname">
-                    </div>
-                    <div class="form-group form-group-default required">
-                        <label>Last name</label>
-                        <input
-                            v-model="userData.lastname"
-                            name="lastname"
-                            class="form-control"
-                            type="text">
-                    </div>
-                    <div class="form-group form-group-default">
-                        <label>Cell phone</label>
-                        <input
-                            v-model="userData.phone"
-                            class="form-control"
-                            name="phone"
-                            type="text">
-                    </div>
-                    <div class="form-group form-group-default required">
-                        <label>Email (username)</label>
-                        <input
-                            v-model="userData.email"
-                            class="form-control"
-                            type="text"
-                            name="email">
-                    </div>
-                </div>
-
-                <div class="col-6 m-b-20">
-                    <div class="col-12 col-md">
-                        <div class="form-group">
-                            <label>Language</label>
-                            <multiselect
-                                v-model="selectedLanguage"
-                                :options="languages"
-                                label="name"
-                                track-by="id"
-                                @input="setLanguage"
-                            />
+    <div>
+        <h5 class="form-title">{{ title }}</h5>
+        <div class="row user-general-information">
+            <div class="col-12 m-b-20">
+                <div class="row">
+                    <div class="col-6 col-md">
+                        <div class="form-group form-group-default required">
+                            <label>First name</label>
+                            <input
+                                v-model="userData.firstname"
+                                class="form-control"
+                                type="text"
+                                name="firstname">
                         </div>
-                        <div class="form-group">
-                            <label>Timezone</label>
-                            <multiselect
-                                v-model="userData.timezone"
-                                :max-height="175"
-                                :options="timezones"
-                            />
+                        <div class="form-group form-group-default required">
+                            <label>Last name</label>
+                            <input
+                                v-model="userData.lastname"
+                                name="lastname"
+                                class="form-control"
+                                type="text">
+                        </div>
+                        <div class="form-group form-group-default">
+                            <label>Cell phone</label>
+                            <input
+                                v-model="userData.phone"
+                                class="form-control"
+                                name="phone"
+                                type="text">
+                        </div>
+                        <div class="form-group form-group-default required">
+                            <label>Email (username)</label>
+                            <input
+                                v-model="userData.email"
+                                class="form-control"
+                                type="text"
+                                name="email">
+                        </div>
+                    </div>
+
+                    <div class="col-6 m-b-20">
+                        <div class="col-12 col-md">
+                            <div class="form-group">
+                                <label>Language</label>
+                                <multiselect
+                                    v-model="selectedLanguage"
+                                    :options="languages"
+                                    label="name"
+                                    track-by="id"
+                                    @input="setLanguage"
+                                />
+                            </div>
+                            <div class="form-group">
+                                <label>Timezone</label>
+                                <multiselect
+                                    v-model="userData.timezone"
+                                    :max-height="175"
+                                    :options="timezones"
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="col-12 col-xl d-flex justify-content-end mt-2">
-            <button :disabled="isLoading" class="btn btn-danger m-r-10" @click="cancel">Cancel</button>
-            <button :disabled="isLoading" class="btn btn-primary" @click="save">Save</button>
+            <div class="col-12 col-xl d-flex justify-content-end mt-2">
+                <button :disabled="isLoading" class="btn btn-danger m-r-10" @click="cancel">Cancel</button>
+                <button :disabled="isLoading" class="btn btn-primary" @click="save">Save</button>
+            </div>
         </div>
     </div>
-</div>
 </template>
 
 <script>
