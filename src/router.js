@@ -7,6 +7,13 @@ import examples from "./views/examples";
 import CompaniesSettings from "./views/settings/companies";
 import BrowseList from "./views/browse/";
 
+/**
+ * Employees 
+ */
+import Employees from "./views/employees/";
+import EmployeesCreate from "./views/employees/create";
+import EmployeesReport from "./views/employees/report";
+
 Vue.use(Router);
 
 const router = new Router({
@@ -17,6 +24,30 @@ const router = new Router({
             path: "/",
             name: "dashboard",
             component: Dashboard,
+            meta: {
+                requiresAuth: true
+            }
+        },
+        {
+            path: "/employees",
+            name: "employees",
+            component: Employees,
+            meta: {
+                requiresAuth: true
+            }
+        },
+        {
+            path:"/employees/create",
+            name: "employees-create",
+            component: EmployeesCreate,
+            meta: {
+                requiresAuth: true
+            }
+        },
+        {
+            path:"/employees/report",
+            name: "employees-report",
+            component: EmployeesReport,
             meta: {
                 requiresAuth: true
             }

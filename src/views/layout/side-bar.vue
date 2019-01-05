@@ -89,6 +89,14 @@
                         <i class="fas fa-users"/>
                     </span>
                 </li>
+                <li>
+                    <router-link id="employees-menu-link" :to="{ name: 'employees'}">
+                        <span class="title">Employees</span>
+                    </router-link>
+                    <span class="icon-thumbnail">
+                        <i class="fas fa-users"/>
+                    </span>
+                </li>
             </ul>
             <div class="clearfix"/>
         </div>

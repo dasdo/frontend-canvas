@@ -54,7 +54,7 @@ export default {
             companiesFields: [{
                 name: "profile_image",
                 title: "Logo",
-                width: "30%"
+                width: "0%"
             }, {
                 name: "name",
                 sortField: "name",
