@@ -178,7 +178,7 @@ export default {
                 method: "POST",
                 data
             }).then((response) => {
-                let text = 'New employee added ' + response.first_name + ' ' + response.last_name;
+                let text = "New employee added " + response.first_name + " " + response.last_name;
                 this.$notify({
                     title: "Confirmation",
                     text: text,
