@@ -72,10 +72,10 @@
                                         <p>{{ employee.admission_date }}</p>
                                     </td>
                                     <td>
-                                        <p>{{ employee.job }}</p>
+                                        <p>{{ employee.Jobs.name }}</p>
                                     </td>
                                     <td>
-                                        <p>{{ employee.salary }}</p>
+                                        <p>{{ employee.hired_salary }}</p>
                                     </td>
                                 </tr>
                             </template>
@@ -115,7 +115,7 @@ export default {
         }
     },
     created() {
-        this.getEmployees();
+        this.getEmployees(1);
     },
     methods: {
         pageChanged(page) {
@@ -123,7 +123,7 @@ export default {
         },
         getEmployees(page = 1) {
             axios({
-                url: `/employees?sort=created_at|DESC&page=${page}`,
+                url: `/employees?sort=created_at|DESC&page=${page}&relationships=Jobs`,
                 method: "GET"
             }).then((response) => {
                 //this.currentPageNumber = +response.page;
