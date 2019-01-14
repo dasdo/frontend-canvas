@@ -62,7 +62,7 @@
                                             name="jobs_id"
                                             class="cs-select cs-skin-slide"
                                             required>
-                                            <option v-for="job in jobs" v-bind:value="job.id" :key="job.id">{{ job.name }}</option>
+                                            <option v-for="job in jobs" :value="job.id" :key="job.id">{{ job.name }}</option>
                                         </select>
 
                                     </div>
